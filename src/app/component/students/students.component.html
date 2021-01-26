@@ -1,0 +1,38 @@
+<div>
+  <button mat-raised-button color="primary" (click)="addStudent()">
+    <mat-icon>add_box</mat-icon>
+    Thêm user
+  </button>
+  <table id="customers" style="border-collapse: collapse;">
+    <tr>
+      <th>Hành động</th>
+      <th>
+        Id
+        <mat-icon style="cursor: pointer;" (click)="sortByCode('down')">
+          arrow_downward
+        </mat-icon>
+        <mat-icon style="cursor: pointer;" (click)="sortByCode('up')">
+          arrow_upward
+        </mat-icon>
+      </th>
+      <th>
+       Ten</th>
+      <th>Tuoi</th>
+
+    </tr>
+    <tr *ngFor="let student of students">
+      <td>
+        <mat-icon style="cursor: pointer;" title="Nhấn vào để xóa" (click)="deleteStudent(student.id)">
+          clear
+        </mat-icon>
+        &nbsp;
+        <mat-icon style="cursor: pointer;" title="Nhấn vào để soạn" (click)="editStudent(student.id)">
+          create
+        </mat-icon>
+      </td>
+      <td>{{ student?.id }}</td>
+      <td>{{ student?.name }}</td>
+      <td>{{ student?.age }}</td>
+    </tr>
+  </table>
+</div>

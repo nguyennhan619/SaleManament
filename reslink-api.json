@@ -1,0 +1,6 @@
+{
+    "User": {
+        "Link": "/user",
+        "LinkID": "/user/{0}"
+      }
+}
